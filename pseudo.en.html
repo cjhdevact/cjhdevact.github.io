@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<title>Pseudo-localization Translater</title>
+<head>	
+	<link rel="icon" href="./Assets/app.png" type="image/x-icon">
+</head>
+<body>
+<center>
+<h1>Pseudo-localization Translater</h1>
+</center>
+<button onclick="notice.style.display='block'"><h2>What is Pseudo-localization?</h2></button>
+<br>
+<br>
+<textarea style="" id="pstype">
+</textarea>
+<br><br>
+Pseudo-localized results: 
+<div id="psshow"> </div>
+<br>
+<input type="radio" name="brackett" id="front">[8dRxc][Add prefix + Enclose in brackets and exclamations !!!]
+<input type="radio" name="brackett" id="bracket">[Enclose in brackets and exclamations !!!]
+<input type="radio" name="brackett" checked>Do not add prefix or suffix
+<br><br>
+<button style="height: auto;width: 300px;" onclick="psloca()"><h1>Pseudo-localized! </h1></button>
+<br><br>
+<center><a href="./pseudo.html">简体中文</a>
+<!-- <br><br><h6>(Edit form <a href="https://suntrise.github.io/">STR</a> Pseudo-localization Translater)</h6></center> -->
+<div class="notice" id="notice">
+Pseudolocalization (or qps-ploc, qps-plocm, qps-ploca, en-XA, en-XB) is a way to simulate the localization process. And by simulating the localization process, it is possible to effectively investigate the problems that occur in the localization (such as characters that cannot be displayed normally, or incomplete segment display due to too long strings, etc.).
+<br>
+During pseudo-localization, English letters are replaced with accents and characters from other scripts. 
+(For example, the letter a is replaced by any one of αäáàāāǎǎăăåå selected at random. ), separators etc. are also added to increase the string length.
+<br>
+For Example：“Windows Photo Gallery” → “ [1iaT9][ Ẅĭпðøωś Þнôтŏ Ģάŀļєяÿ !!! !] ”
+<br>
+More information: <a href="https://docs.microsoft.com/en-us/globalization/methodology/pseudolocalization">https://docs.microsoft.com/zh-cn/globalization/methodology/pseudolocalization</a>
+<br><br>
+This webpage demonstrates part of pseudo-localization, replacing English letters with different characters and adding separators.
+<br><br><br><br>
+<button style="position: absolute;bottom: 3%;right: 1%;height: 50px;width: 100px;font-size: 20px;" onclick="notice.style.display='none'">Close</button>
+</div>
+</body>
+<link rel="stylesheet" type="text/css" href="./css/pslo.css"> 
+<script type="text/javascript" src="./js/pslo.js"></script>

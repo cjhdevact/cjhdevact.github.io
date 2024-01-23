@@ -1,7 +1,7 @@
 <!-------------------------
 ******************************
-Cjhdevact Github 主页 - 首页 （浅色）
-名称：index.light.html
+Cjhdevact Github 主页 - 首页 （深色）
+名称：index.dark.html
 作者：CJH
 历史：
   CJH 编辑于 2023-10-4
@@ -23,7 +23,7 @@ The file license under the MIT License
     <link href="./css/animate.css" rel="stylesheet">
     <script type="text/javascript" src="./component/layer-v3.0.3/layer/layer.js"></script>
     <link rel="stylesheet" href="./component/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="./css/default.light.css" rel="stylesheet">
+    <link href="./css/default.dark.css" rel="stylesheet">
     <script type="text/javascript" src="./js/win10.js"></script>
 
 
@@ -43,8 +43,8 @@ The file license under the MIT License
 
             //设置壁纸
             Win10.setBgUrl({
-                main:'./Assets/wallpapers/wallpaper.light.jpg',
-                mobile:'./Assets/wallpapers/mobile.light.jpg',
+                main:'./Assets/wallpapers/wallpaper.jpg',
+                mobile:'./Assets/wallpapers/mobile.jpg',
             });
 
             Win10.setAnimated([
@@ -139,14 +139,13 @@ The file license under the MIT License
             <div class="item" onclick=" Win10.exit();"><i class="black icon fa fa-power-off fa-fw"></i>关闭</div>-->
 			 <div class="item" ><i class="gray icon fa fa-folder fa-fw"></i>实用功能</div>
 			 <div class="sub-item" onclick="W_Bugs();"><i class="purple icon fa fa-bug fa-fw"></i> :(</div>
-			 <!--window.open('AppList.html','_self')
-			 <div class="sub-item" onclick="Win10.openUrl('https://cjhdevact.gthub.io/bsodemu.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');"><i class="purple icon fa fa-bsod fa-fw"></i><img style="width: 36px;height: 36px;margin: 4px auto" class="icon" src="./Assets/bsodlg.png"/>蓝屏模拟器</div>-->
-			<div class="sub-item" onclick="Win10.openUrl('./bsodemu.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');"><i class="blue icon fa fa-gavel fa-fw"></i>蓝屏模拟器</div>
+			 <!--<div class="sub-item" onclick="Win10.openUrl('https://cjhdevact.gthub.io/bsodemu.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');"><i class="purple icon fa fa-bsod fa-fw"></i><img style="width: 36px;height: 36px;margin: 4px auto" class="icon" src="./Assets/bsodlg.png"/>蓝屏模拟器</div>-->
+			 <div class="sub-item" onclick="Win10.openUrl('./bsodemu.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');"><i class="blue icon fa fa-gavel fa-fw"></i>蓝屏模拟器</div>
 			 <div class="sub-item" onclick="Win10.openUrl('./random.html','<img class=\'icon\' src=\'./Assets/app.png\'/>随机数生成器');"><i class="red icon fa fa-gavel fa-fw"></i>随机数生成器</div>
-			 <div class="sub-item" onclick="Win10.openUrl('./pseudo.html','<img class=\'icon\' src=\'./Assets/app.png\'/>伪本地化 （Pseudo-localization） 翻译器');"><i class="green icon fa fa-gavel fa-fw"></i>伪本地化翻译器</div>
+			  <div class="sub-item" onclick="Win10.openUrl('./pseudo.html','<img class=\'icon\' src=\'./Assets/app.png\'/>伪本地化 （Pseudo-localization） 翻译器');"><i class="green icon fa fa-gavel fa-fw"></i>伪本地化翻译器</div>
 			 <div class="sub-item" onclick="window.open('./Win8OOBE.html');"><i class="green icon fa fa-gavel fa-fw"></i>Win8-OOBE</div>
 			 <div class="sub-item" onclick="window.open('./Win10OOBE.html');"><i class="purple icon fa fa-gavel fa-fw"></i>Win10-OOBE</div>
-			 <div class="sub-item" onclick="Win10.commandCenterToggle()"><i class="white icon fa fa fa-comment-o fa-fw"></i>通知中心</div>
+			 <div class="sub-item" onclick="Win10.commandCenterToggle()"><i class="black icon fa fa fa-comment-o fa-fw"></i>通知中心</div>
 			 <div class="item" onclick="Win10.aboutUs()"><i class="blue icon fa fa-info-circle fa-fw"></i>关于</div>
 			 <div class="item" onclick="Win10.exit();"><i class="red icon fa fa-power-off fa-fw"></i>关闭</div>
         </div>
@@ -167,10 +166,10 @@ The file license under the MIT License
                         <div class="win10-block-content-text">Github</div>
 					</div>
                 </div>
-				<div loc="5,1" size="2,2" class="block" onclick="Win10.UseDark()">
+				<div loc="5,1" size="2,2" class="block" onclick="Win10.UseLight()">
                     <div class="content">
-                        <img style="width: 55px;height: 55px;margin: 2px auto;display: block" src="./Assets/icon/color.dark.png">
-                        <div class="win10-block-content-text">深色模式</div>
+                        <img style="width: 55px;height: 55px;margin: 2px auto;display: block" src="./Assets/icon/color.light.png">
+                        <div class="win10-block-content-text">浅色模式</div>
 					</div>
                 </div>
 				<div loc="1,3" size="4,2" class="block" onclick="Win10.openUrl('./downloads.html','<img class=\'icon\' src=\'./Assets/icon/downs.png\'/>下载')">
@@ -296,7 +295,7 @@ The file license under the MIT License
                 <!--0:00<br/>-->
                 <!--1993/8/13-->
             </div>
-            <div class="btn" id="win10_btn_command"><img style="width: 30px;height: 30px;margin: 4px auto;display: block" src="./Assets/icon/msg.light.png"></div>
+            <div class="btn" id="win10_btn_command"><img style="width: 30px;height: 30px;margin: 4px auto;display: block" src="./Assets/icon/msg.dark.png"></div>
             <div class="btn" id="win10_btn_show_desktop"></div>
         </div>
     </div>

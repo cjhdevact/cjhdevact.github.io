@@ -1,0 +1,226 @@
+<!-------------------------
+******************************
+Cjhdevact Github 主页 - 个人项目
+名称：projects.html
+作者：CJH
+历史：
+  CJH 创建于 2023-9-1
+  CJH 编辑于 2023-9-3
+  CJH 编辑于 2024-1-23
+The file license under the MIT License
+版权所有 © CJH。
+******************************
+--------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <link rel="icon" href="./Assets/logo.png">
+	<link rel="SHORTCUT ICON" href="./Assets/logo.png" type="image/x-icon"/>
+    <title>Cjhdevact Github 主页</title>
+	<script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+    <!--<script type="module" src="127.0.0.1/unpkg.com_@fluentui_web-components@2.5.16_dist_web-components.min.js"></script>-->
+	<!--<script type="text/javascript" src="unpkg.com-fluentui_web-components-2.5.16_dist_web-components.min.js"></script>-->
+    <style>
+        html
+        {
+            min-width: 580px;
+            max-width: 800px;  
+            margin: 0 auto;  
+            height: 101%;
+        }
+
+        body 
+        {
+            background-color:rgb(249,249,249);
+            color:black;
+            font-family: '微软雅黑', serif;
+            min-width: 500px;
+            max-width: 720px;
+            margin: 40px; 
+        }
+
+        .ContentEntrance 
+        {
+            animation: FloatIn 1s cubic-bezier(0,1,0,1);
+        }
+
+        .page-title 
+        {
+            font-weight: bold;
+            font-size: 48px;
+            margin: 4px 0 20px 4px;
+        }
+
+        .grid-container 
+        {
+            display: grid;
+            grid-gap: 4px;
+            max-width: 720px;
+        }
+        
+        .grid-item 
+        {
+            position: relative;
+            margin: 0 0 0 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 160px;
+            background-color: transparent;
+            border: none;
+            max-width: 720px;
+        }
+
+        .grid-item .title 
+        {
+            position: absolute;
+            font-size: 22px;
+            left: 26px;
+            top: 8px;
+            right: 0px;
+            bottom: 0px;
+            text-align: left;
+            font-family: '微软雅黑', serif;
+        }
+
+        .grid-item .description 
+        {
+            position: absolute;
+            font-size: 16px;
+            left: 26px;
+            top: 42px;
+            right: 172px;
+            bottom: 26px;
+            text-align: left;
+            font-family: '微软雅黑', serif;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .grid-item img 
+        {
+            position: absolute;
+            height: 120px;
+            width: 120px;
+            right: 26px;
+            top: 20px;
+        }
+
+        .more 
+        {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 12px 4px 4px 4px;
+            max-width: 720px;
+        }
+
+        .more-item 
+        {
+            position: relative;
+            margin: 0,4px 0 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 68px;
+            background-color: transparent;
+            border: none;
+            max-width: 720px;
+        }
+
+        .more-item img
+        {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            right: 28px;
+            top: 24px;
+            bottom: 24px;
+        }
+
+        .more-item .title 
+        {
+            position: absolute;
+            font-size: 16px;
+            left: 26px;
+            right: 26px;
+            top: 25px;
+            bottom: 27px;
+            text-align: left;
+            font-family: '微软雅黑', serif;
+        }
+
+        .qr-button 
+        {
+            width: 100px;
+            position:absolute;
+            top: 18px;
+            bottom: 18px;
+            right: 26px;
+        }
+
+        @media (prefers-color-scheme: dark) 
+        {
+            body 
+            {
+                background-color: rgb(40,40,40);
+                color: white;
+            }
+        }
+
+        @keyframes FloatIn
+        {
+            0% 
+            {
+                opacity: 0;
+                transform: translateY(500px);
+            }
+            40% 
+            {
+                opacity: 0;
+                transform: translateY(500px);
+            }
+            100% 
+            {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Cjhdevact 个人项目</h1>
+    <div class="ContentEntrance">
+
+        <div class="grid-container">
+            <fluent-button class="grid-item" onclick="window.open('https://github.com/cjhdevact/opv')">
+                <h2 class="title">Open Picture Viewer</h2>
+                <p class="description">Open Picture Viewer<br>这是一款个人开发的图片查看器。</p>
+                <img src="./Assets/icon/opv.png">
+            </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://github.com/cjhdevact/easysys')">
+                <h2 class="title">EasySys</h2>
+                <p class="description">这是一款系统优化辅助工具<br>（开发中，敬请期待...）</p>
+                <img src="./Assets/icon/easysys.png">
+            </fluent-button>
+        </div> 
+        <h3 class="more">更多</h3>
+        <div class="grid-container">
+            <fluent-button class="more-item" onclick="window.open('https://github.com/cjhdevact')">
+                <span class="title">Github 个人主页</span>
+                <img src="./Assets/icon/github.png">
+            </fluent-button>
+			<fluent-button class="more-item" onclick="window.open('feedback.html','_self')">
+                <span class="title">反馈中心</span>
+                <img src="./Assets/icon/FeedBack.png">
+            </fluent-button>
+            <!--<fluent-button class="more-item" onclick="window.open('QrCode.html','_self')">
+                <span class="title">-</span>
+                <fluent-button class="qr-button" >显示二维码</fluent-button>
+            </fluent-button> -->
+        </div>
+    </div>
+</body>
+</html>

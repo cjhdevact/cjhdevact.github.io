@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<title>伪本地化翻译器</title>
+<head>	
+	<link rel="icon" href="./Assets/app.png" type="image/x-icon">
+</head>
+<body>
+<center>
+<h1>伪本地化（Pseudo-localization）翻译器</h1>
+</center>
+<button onclick="notice.style.display='block'"><h3>什么是伪本地化？</h3></button>
+<br>
+<br>
+<textarea style="" id="pstype">
+</textarea>
+<br><br>
+伪本地化结果：
+<div id="psshow"></div>
+<br>
+<input type="radio" name="brackett" id="front">[8dRxc][添加前缀 + 用括号和感叹号括起来 !!!]
+<input type="radio" name="brackett" id="bracket">[仅用括号和感叹号括起来 !!!]
+<input type="radio" name="brackett" checked>不添加前后缀
+<br><br>
+  <button style="height: 70px;width: 150px;" onclick="psloca()"><h2>翻译成伪语言</h2></button>
+<br><br>
+<center><a href="./pseudo.en.html">English UI</a>
+<!--<br><br><h6>（修改自 <a href="https://suntrise.github.io/">STR</a> 伪本地化翻译器）</h6></center>-->
+<div class="notice" id="notice">
+伪本地化（pseudo-localization，语言环境名称为 qps-ploc, qps-plocm, qps-ploca, en-XA, en-XB），是模拟本地化过程的一种方式。而通过模拟本地化过程，能够有效地调查在本地化中出现的问题（如字符无法正常显示，或因字符串过长而导致语段显示不完整等）。
+<br>
+在伪本地化过程中，英文字母会被替换为来自其他语言的重音符号和字符。（例如，字母 a 可以被 αäáàāāǎǎăăåå 中的任何一个替换。），还会添加分隔符等以增加字符串长度。
+<br>
+举例：“Windows 照片库（Windows Photo Gallery）”→“ [1iaT9][ Ẅĭпðøωś Þнôтŏ Ģάŀļєяÿ !!! !] ”
+<br>
+更多信息：<a href="https://docs.microsoft.com/zh-cn/globalization/methodology/pseudolocalization">https://docs.microsoft.com/zh-cn/globalization/methodology/pseudolocalization</a>
+<br>
+<br><br>
+该网页演示了伪本地化的一部分，即用不同的字符替换英文字母和添加分隔符。
+<br>
+<br><br><br><br>
+<button style="position: absolute;bottom: 3%;right: 1%;height: 50px;width: 100px;font-size: 20px;" onclick="notice.style.display='none'">关闭</button>
+</div>
+</body>
+<link rel="stylesheet" type="text/css" href="./css/pslo.css">    
+<script type="text/javascript" src="./js/pslo.js"></script>
+<br><br>
