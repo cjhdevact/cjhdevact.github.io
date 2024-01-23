@@ -894,7 +894,7 @@ window.Win10 = {
 			'<p>版本： ' + this._cversion + ' </p>' +
 			'<p>版权所有 © CJH。</p>' +
 			'<p>基于 WIN10-UI ' + this._version + ' 修改。</p>' +
-			'<div style="text-align: center"><a target="_blank" href="=https://github.com/cjhdevact/cjhdevact.github.io">页面源码</a></div>' +
+			'<div style="text-align: center"><a target="_blank" href="https://github.com/cjhdevact/cjhdevact.github.io">页面源码</a></div>' +
             '</div>'
         });
     },
