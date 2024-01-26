@@ -1,0 +1,124 @@
+<head>	
+	<title>蓝屏模拟器</title>
+	<link rel="icon" href="./Assets/bsodlg.png" type="image/x-icon">
+</head>
+<body>
+<center>
+    <img style="width: 96px;height: 96px;margin: 2px auto" class="icon" src="./Assets/bsodlg.png"/>
+	<h2>蓝屏模拟器 1.2 （Windows 8+）</h2>
+	<h3>（模拟 Windows 8 及更高版本的蓝屏界面）</h3>
+	<!-- <a href="./bsodemuv2xp.html" style="display:none">模拟 Windows XP-7 蓝屏</a> -->
+	<a href="./bsodemuv2xp.html" >模拟 Windows XP-7 蓝屏</a></h3>
+<div style="font-size: 20px;">
+<center>
+背景颜色：<input type="color" id="bsodbg" style="height:35px;width:60px;" value="#003D92">
+字体颜色：<input type="color" style="height:35px;width:60px;" id="bsodfc" value="#FFFFFF">
+<br>
+备选颜色：<button style="font-size: 15px;color:#fff;background:#0086ac;" onclick="bsodbg.value='#0086ac'">蓝色1</button>
+<button style="font-size: 15px;color:#fff;background:#006cd0;" onclick="bsodbg.value='#006cd0'">蓝色2</button>
+<button style="font-size: 15px;color:#fff;background:#096BAC;" onclick="bsodbg.value='#096BAC'">蓝色3</button>
+<button style="font-size: 15px;color:#fff;background:#003d92;" onclick="bsodbg.value='#003d92'">蓝色4</button>
+<button style="font-size: 15px;color:#fff;background:#246f24;" onclick="bsodbg.value='#246f24'">预览版绿</button>
+<br><br>
+</center>
+:( &nbsp<textarea name="bsli1" id="bssad">:(</textarea>
+<br>
+第一行：<textarea id="bsli1">你的设备遇到问题，需要重启。</textarea>
+<br>
+第二行：<textarea id="bsli2">我们只为你收集某些信息，然后为你重新启动。</textarea>
+<br>
+第三行：<textarea id="bsli3n" style="width:80px">100%</textarea><textarea id="bsli3">已完成</textarea>
+<br>
+第四行：<textarea id="bsli4">有关此问题的详细信息和可能的解决方法，请访问 </textarea>
+<br>
+第五行：<textarea id="bsli5">https://www.windows.com/stopcode</textarea>
+<br>
+第六行：<textarea id="bsli6">如果致电支持人员，请向他们提供以下信息：</textarea>
+<br>
+第七行：<textarea id="bsli7">错误代码：CRITICAL_PROCESS_DIED</textarea>
+<br><br><input type="checkbox" name="" id="qrm" checked="">是否显示二维码
+<br><br>
+<button style="padding: 10px;" onclick="show()">开始</button>
+（按下 F11 进入全屏，按下 Esc 键以退出蓝屏界面）
+</div>
+</center>
+<center><br><h6>（修改自<a href="https://suntrise.github.io">STR</a> YesMyFault 1.2）</h6></center>
+<div class="bsod_bg" id="bsod" style="background:#457948;">
+<div style="position: absolute; top:5%;left: 18%;">
+<span id="bsodsad" style="font-size:120pt; margin:0; margin-bottom:10pt">:(</span>
+<br><br>
+<p style="font-size:25pt; margin:0; padding:0">
+<span id="bsline1"></span>
+<br><span id="bsline2"></span>
+<br><br><span id="bsline3n">100%</span> <span id="bsline3"></span>
+</p>
+<br><br>
+<img id="qr" style="float:left;margin-right:30px;" src="./Assets/bsodqr.png">
+<div style="float:left;width:%;">
+<p style="font-size:14pt;margin-top:0px;margin-left:px;  padding:0;line-height:32px;"><span id="bsline4">
+</span><br><span id="bsline5"></span>
+<br><br><span id="bsline6"></span>
+<br><span id="bsline7"></span>
+</p>
+</div>
+</div>
+</div>
+</body>
+
+<link rel="stylesheet" type="text/css" href=".\css\bsodemuv2.css">
+<style type="text/css">
+	.bsod_bg{
+		cursor: none;
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height:100%;
+		width:100%;
+		font-family: Segoe UI;
+		font-weight:;
+		color: ;
+	}
+</style>
+
+<script type="text/javascript"> 
+var col=setInterval(bsodset,1)
+function bsodset() {
+	bsod.style.background=bsodbg.value;
+	bsod.style.color=bsodfc.value
+	bsodsad.innerHTML=bssad.value
+    bsline1.innerHTML=bsli1.value
+    bsline2.innerHTML=bsli2.value
+    bsline3n.innerHTML=bsli3n.value    
+    bsline3.innerHTML=bsli3.value    
+    bsline4.innerHTML=bsli4.value
+    bsline5.innerHTML=bsli5.value
+    bsline6.innerHTML=bsli6.value 
+    bsline7.innerHTML=bsli7.value
+    if (qrm.checked) {
+	qr.style.display="block";
+    }    
+    else{
+	qr.style.display="none";
+    }
+}
+
+function show() {
+	document.getElementById('bsod').style.display='block';
+	bsod.oncontextmenu = stop;
+}
+
+function stop(){
+	return false;
+}
+
+function hotkey(){
+var a=window.event.keyCode;
+if(a==27){
+bsod.style.display="none";
+}
+}
+window.onload = function(){
+document.onkeydown = hotkey;
+};
+</script>
