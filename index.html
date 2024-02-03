@@ -5,7 +5,7 @@ Cjhdevact Github 主页 - 首页 （浅色）
 作者：CJH
 历史：
   CJH 编辑于 2023-10-4
-  CJH 编辑于 2024-1-23
+  CJH 编辑于 2024-2-3
 The file license under the MIT License
 版权所有 © CJH。
 ******************************
@@ -211,6 +211,24 @@ The file license under the MIT License
                         Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows），代理字符串：' + userAgent)
                     }, 1000);
                 }
+		    } else if (/WeChat/.test(userAgent)) {
+                if (/Windows Phone/.test(userAgent)) {
+                    setTimeout(function () {
+                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows Phone），代理字符串：' + userAgent)
+                    }, 1000);
+                } else if (/Android/.test(userAgent)) {
+                    setTimeout(function () {
+                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Android），代理字符串：' + userAgent)
+                    }, 1000);
+                } else if (/Mac OS/.test(userAgent)) {
+                    setTimeout(function () {
+                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Mac OS），代理字符串：' + userAgent)
+                    }, 1000);
+                } else {
+                    setTimeout(function () {
+                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows），代理字符串：' + userAgent)
+                    }, 1000);
+                }
 		    } else if (/Huawei/.test(userAgent)) {
                 if (/Windows Phone/.test(userAgent)) {
                     setTimeout(function () {
@@ -320,7 +338,7 @@ The file license under the MIT License
                     <div class="title">历史版本</div>
                 </div>
                 <div class="shortcut"
-                    onclick="Win10.openUrl('https://github.com/cjhdevact','<img class=\'icon\' src=\'./Assets/icon/Github.png\'/>Github')">
+                    onclick="window.open('https://github.com/cjhdevact')">
                     <img class="icon" src="./Assets/icon/Github.png" />
                     <div class="title">Github</div>
                 </div>
@@ -392,8 +410,8 @@ The file license under the MIT License
                             <div class="win10-block-content-text">个人项目</div>
                         </div>
                     </div>
-                    <div loc="3,1" size="2,2" class="block"
-                        onclick="Win10.openUrl('https://github.com/cjhdevact','<img class=\'icon\' src=\'./Assets/icon/Github.png\'/>Github')">
+                   <div loc="3,1" size="2,2" class="block"
+                        onclick="window.open('https://github.com/cjhdevact')">
                         <div class="content">
                             <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
                                 src="./Assets/icon/Github.png">
