@@ -9,7 +9,7 @@
  ******************************/
 window.Win10 = {
     _version:'v1.1.2.4',
-	_cversion:'v3-20240203',
+	_cversion:'v3-20240323',
     _debug:true,
     _bgs:{
         main:'',
