@@ -1,0 +1,135 @@
+<!doctype html>
+
+<!--
+about:version template page
+-->
+
+<html id="t" dir="ltr" lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <title>关于版本</title>
+
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="./assets/logo.png">
+
+    <link rel="stylesheet" href="./css/text_defaults.css">
+
+    <link rel="stylesheet" href="./css/about_version.css">
+
+
+
+    <script type ="module" src="./js/about_version.js"></script>
+  </head>
+
+   <!--<script>
+       var userAgent = navigator.userAgent;
+	   document.getElementById('useragent').innerHTML = 'userAgent';
+   </script>-->
+
+  <body>
+
+    <div id="outer">
+      <div id="logo">
+
+        <!-- Version for themes. -->
+        <picture>
+          <source srcset="./assets/logobar.png,
+                          ./assets/logobar.png@2x 2x"
+                  media="(prefers-color-scheme: dark)">
+          <source srcset="./assets/logobar.png,
+                          ./assets/logobar.png@2x 2x"
+                  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+          <img alt="Cjhdevact Github 个人主页徽标" src="./assets/logobar.png">
+        </picture>
+
+
+        <div id="company">Cjhdevact(CJH)</div>
+        <div id="copyright">版权所有 © CJH。</div>
+      </div>
+      <table id="inner" cellpadding="0" cellspacing="0" border="0">
+        <tr><td class="label">Cjhdevact Github 个人主页</td>
+          <td class="version" id="version">
+            <span id="copy-content">
+              <span>v3</span>
+              (<span>正式版本</span>)
+              <span></span>
+              <span>（Web）</span>
+  
+            </span>
+			<!--
+            <button id="copy-to-clipboard" aria-label="复制版本字符串">
+              <div id="copy-to-clipboard-icon"></div>
+            </button>
+			-->
+          </td>
+        </tr>
+        <tr>
+          <td class="label">修订版本</td>
+          <td class="version">
+            <span>20240323</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">操作系统</td>
+          <td class="version" id="os_type">
+            <span id="copy-os-content">
+              <span>Web</span>
+
+
+              <span id="os_version"></span>
+
+            </span>
+
+          </td>
+        </tr>
+
+
+
+
+        <tr><td class="label">JavaScript</td>
+          <td class="version" id="js_engine">
+            <span>V8</span>
+            <span>(Unknown Version)</span>
+          </td>
+        </tr>
+
+        <!--<tr><td class="label">用户代理</td>
+          <td class="version" id="useragent"></td>
+        </tr> -->
+        <tr><td class="label">命令行</td>
+          <td class="version" id="command_line">cjhdevact.github.io/index.html</td>
+        </tr>
+
+        <tr><td class="label">可执行文件路径</td>
+          <td class="version" id="executable_path">cjhdevact.github.io</td>
+        </tr>
+        <tr><td class="label">个人资料路径</td>
+          <td class="version" id="profile_path">无</td>
+        </tr>
+
+
+        <tr id="variations-seed-section" hidden>
+          <td class="label">变体版本种子类型</td>
+          <td class="version" id="variations-seed"></td>
+        </tr>
+        <tr id="variations-section">
+          <td class="label">使用中的变体</td>
+          <td class="version" id="variations-list">无</td>
+        </tr>
+        <tr id="variations-cmd-section" hidden>
+          <td class="label">命令行变体</td>
+          <td class="version-wide" id="variations-cmd"></td>
+        </tr>
+        <tr id="sanitizer-section" hidden>
+          <td class="label">Sanitizer</td>
+          <td class="version" id="sanitizer"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="messages" role="alert" aria-live="polite" aria-relevant="additions">
+    </div>
+  </body>
+</html>
