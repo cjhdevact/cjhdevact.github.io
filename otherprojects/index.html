@@ -49,8 +49,8 @@ The file license under the MIT License
         .page-title 
         {
             font-weight: bold;
-            font-size: 48px;
-            margin: 4px 0 20px 4px;
+            font-size: 36px;
+            margin: 4px 0 20px 40px;
         }
 
         .page-secondtitle 
@@ -152,6 +152,14 @@ The file license under the MIT License
             right: 26px;
         }
 
+		.backbutton 
+        {
+            width: 50px;
+            top: 45px;
+            bottom: 18px;
+            right: 26px;
+        }
+
         @media (prefers-color-scheme: dark) 
         {
             body 
@@ -182,21 +190,16 @@ The file license under the MIT License
     </style>
 </head>
 <body>
+	<fluent-button class="backbutton" onclick="window.open('../projects.html','_self')">
+       <img src="../Assets/icon/back.png">
+    </fluent-button>
     <h1 class="page-title">Cjhdevact 个人项目</h1>
     <div class="ContentEntrance">
         <h3 class="more">其他项目</h3>
         <div class="grid-container">
-            <fluent-button class="grid-item" onclick="window.open('./LayoutDesign-20240712/preview/LayoutDesign-20240712.html','_self')">
-				<img src="../Assets/icon/webfile.png">
-                <span class="title">虚构布局图设计-20240712（在线预览）</span>
-            </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./LayoutDesign-20240712/虚构布局图设计-20240712.xlsx','_self')">
-				<img src="../Assets/icon/excelfile.png">
-                <span class="title">虚构布局图设计-20240712（Excel 文件）</span>
-            </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./LayoutDesign-20240712/虚构布局图设计-20240712.pdf','_self')">
-				<img src="../Assets/icon/pdffile.png">
-                <span class="title">虚构布局图设计-20240712（PDF 文件）</span>
+            <fluent-button class="grid-item" onclick="window.open('./LayoutDesign-20240712/index.html','_self')">
+				<img src="./LayoutDesign-20240712/preview/LayoutDesign-20240712.files/excelapp.png">
+                <span class="title">虚构布局图设计-20240712</span>
             </fluent-button>
         </div>
 		<br>

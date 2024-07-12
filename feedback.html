@@ -50,8 +50,8 @@ The file license under the MIT License
         .page-title 
         {
             font-weight: bold;
-            font-size: 48px;
-            margin: 4px 0 20px 4px;
+            font-size: 36px;
+            margin: 4px 0 20px 40px;
         }
 
         .grid-container 
@@ -161,6 +161,14 @@ The file license under the MIT License
             right: 26px;
         }
 
+		.backbutton 
+        {
+            width: 50px;
+            top: 45px;
+            bottom: 18px;
+            right: 26px;
+        }
+
         @media (prefers-color-scheme: dark) 
         {
             body 
@@ -191,7 +199,10 @@ The file license under the MIT License
     </style>
 </head>
 <body>
-    <h1 class="page-title">反馈中心</h1>
+	<fluent-button class="backbutton" onclick="window.open('./projects.html','_self')">
+       <img src="./Assets/icon/back.png">
+    </fluent-button>
+    <h1 class="page-title">Cjhdevact 个人项目 > 反馈中心</h1>
     <div class="ContentEntrance">
         <h3 class="more">请选择要反馈的项目</h3>
         <div class="grid-container">
