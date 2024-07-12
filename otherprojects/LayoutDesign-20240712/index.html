@@ -1,0 +1,226 @@
+<!-------------------------
+******************************
+Cjhdevact Github 主页 - 个人项目
+名称：otherprojects/index.html
+作者：CJH
+历史：
+  CJH 编辑于 2024-7-12
+The file license under the MIT License
+版权所有 © CJH。
+******************************
+--------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <link rel="icon" href="../..Assets/logo.png">
+	<link rel="SHORTCUT ICON" href="../../Assets/logo.png" type="image/x-icon"/>
+    <title>Cjhdevact Github 主页</title>
+	<!--<script type="module" src="https://cjhdevact.github.io/js/web-components.min.js"></script>-->
+	<script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+    <!--<script type="module" src="127.0.0.1/unpkg.com_@fluentui_web-components@2.5.16_dist_web-components.min.js"></script>-->
+	<!--<script type="text/javascript" src="unpkg.com-fluentui_web-components-2.5.16_dist_web-components.min.js"></script>-->
+    <style>
+   html
+        {
+            min-width: 580px;
+            max-width: 800px;  
+            margin: 0 auto;  
+            height: 101%;
+        }
+
+        body 
+        {
+            background-color:rgb(249,249,249);
+            color:black;
+            font-family: '微软雅黑', serif;
+            min-width: 500px;
+            max-width: 720px;
+            margin: 40px; 
+        }
+
+        .ContentEntrance 
+        {
+            animation: FloatIn 1s cubic-bezier(0,1,0,1);
+        }
+
+        .page-title 
+        {
+            font-weight: bold;
+            font-size: 36px;
+            margin: 4px 0 20px 40px;
+        }
+
+        .page-secondtitle 
+        {
+            position: absolute;
+            width: 100%;
+            min-width: 580px;
+            max-width: 800px;
+            text-align: right;
+            font-size: 16px;
+            margin: -68px 40px 0 -88px;
+        }
+
+        .grid-item 
+        {
+            position: relative;
+            margin: 4px 0 0 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 68px;
+            background-color: none;
+            border: none;
+            max-width: 720px;
+        }
+
+        .grid-item img
+        {
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            left: 22px;
+            top: 22px;
+            bottom: 24;
+            border-radius: 8px;
+        }
+
+        .grid-item .title 
+        {
+            position: absolute;
+            font-size: 16px;
+            left: 68px;
+            right: 26px;
+            top: 25px;
+            bottom: 27px;
+            text-align: left;
+            font-family: '微软雅黑', serif;
+        }
+
+        .more 
+        {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 12px 4px 4px 4px;
+            max-width: 720px;
+        }
+
+        .more-item 
+        {
+            position: relative;
+            margin: 0,4px 0 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 68px;
+            background-color: transparent;
+            border: none;
+            max-width: 720px;
+        }
+
+        .more-item img
+        {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            right: 28px;
+            top: 24px;
+            bottom: 24px;
+        }
+
+        .more-item .title 
+        {
+            position: absolute;
+            font-size: 16px;
+            left: 26px;
+            right: 26px;
+            top: 25px;
+            bottom: 27px;
+            text-align: left;
+            font-family: '微软雅黑', serif;
+        }
+
+        .mbutton 
+        {
+            width: 100px;
+            /* position:absolute; */
+            top: 18px;
+            bottom: 18px;
+            right: 26px;
+        }
+		
+		.backbutton 
+        {
+            width: 50px;
+            top: 45px;
+            bottom: 18px;
+            right: 26px;
+        }
+
+        @media (prefers-color-scheme: dark) 
+        {
+            body 
+            {
+                background-color: rgb(40,40,40);
+                color: white;
+            }
+        }
+
+        @keyframes FloatIn
+        {
+            0% 
+            {
+                opacity: 0;
+                transform: translateY(500px);
+            }
+            40% 
+            {
+                opacity: 0;
+                transform: translateY(500px);
+            }
+            100% 
+            {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+	<fluent-button class="backbutton" onclick="window.open('../index.html','_self')">
+       <img src="../../Assets/icon/back.png">
+    </fluent-button>
+    <h1 class="page-title">Cjhdevact 个人项目 > 其他项目</h1>
+    <div class="ContentEntrance">
+        <h3 class="more">虚构布局图设计-20240712</h3>
+        <div class="grid-container">
+            <fluent-button class="grid-item" onclick="window.open('./preview/LayoutDesign-20240712.html')">
+				<img src="../../Assets/icon/webfile.png">
+                <span class="title">虚构布局图设计-20240712（在线预览）</span>
+            </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fcjhdevact.github.io%2Fotherprojects%2FLayoutDesign-20240712%2F%25E8%2599%259A%25E6%259E%2584%25E5%25B8%2583%25E5%25B1%2580%25E5%259B%25BE%25E8%25AE%25BE%25E8%25AE%25A1-20240712.xlsx')">
+				<img src="./preview/LayoutDesign-20240712.files/excelapp.png">
+                <span class="title">虚构布局图设计-20240712（在线预览）（Microsoft Web Excel）</span>
+            </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('./虚构布局图设计-20240712.xlsx')">
+				<img src="../../Assets/icon/excelfile.png">
+                <span class="title">虚构布局图设计-20240712（Excel 文件）</span>
+            </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('./虚构布局图设计-20240712.pdf')">
+				<img src="../../Assets/icon/pdffile.png">
+                <span class="title">虚构布局图设计-20240712（PDF 文件）</span>
+            </fluent-button>
+        </div>
+		<br>
+		<center>
+		<fluent-button class="mbutton" onclick="window.open('./index.html')">
+                <span class="title">新标签页打开</span>
+        </fluent-button>
+		</center>
+		<br>
+    </div>
+</body>
+</html>
