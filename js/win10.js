@@ -5,11 +5,11 @@
  历史：
    Created by Yuri2 on 2017/7/10.
    CJH 编辑于 2023-10-04
-   CJH 编辑于 2024-2-3
+   CJH 编辑于 2024-7-18
  ******************************/
 window.Win10 = {
     _version:'v1.1.2.4',
-	_cversion:'v3-20240323',
+	_cversion:'v3-20240718',
     _debug:true,
     _bgs:{
         main:'',
