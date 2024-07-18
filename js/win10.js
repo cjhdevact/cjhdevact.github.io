@@ -908,7 +908,7 @@ window.Win10 = {
     UseLight:function () {
 		    //window.open('https://cjhdevact.github.io/index.light.html')
             //document.body.onbeforeunload = function(){};
-            window.location.href="./index.html";
+            window.location.href="./index.light.html";
             //window.close();
             //layer.close(index);
     },

@@ -1,582 +1,65 @@
+
 <!-------------------------
 ******************************
-Cjhdevact Github 主页 - 首页 （浅色）
-名称：index.light.html
+Cjhdevact Github 主页 - 首页（跳转）
+名称：index.html
 作者：CJH
 历史：
   CJH 编辑于 2023-10-4
-  CJH 编辑于 2024-7-10
-The file license under the MIT License
 版权所有 © CJH。
 ******************************
 --------------------------->
 <!DOCTYPE html>
 <html lang="zh-cn">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cjhdevact Github 主页</title>
+	<link rel="manifest" href="/manifest.json" />
     <link rel='Shortcut Icon' type='image/x-icon' href='./Assets/logo.png'>
-    <link rel="icon" href="./Assets/logo.png">
-    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
-    <link href="./css/animate.css" rel="stylesheet">
-    <script type="text/javascript" src="./component/layer-v3.0.3/layer/layer.js"></script>
-    <link rel="stylesheet" href="./component/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="./css/default.light.css" rel="stylesheet">
-    <script type="text/javascript" src="./js/win10.js"></script>
-	
+	<link rel="icon" href="./Assets/logo.png">
     <style>
-        * {
-            font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
+        body {
+            background-color:rgb(249,249,249);
         }
-
-        /*磁贴自定义样式*/
-        .win10-block-content-text {
-            line-height: 30px;
-            text-align: center;
-            font-size: 14px;
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: rgb(40,40,40);
+            }  
         }
     </style>
+	<script>
+	// serviceWorker
+	// 检查serviceWorker属性是否可用
+	if ("serviceWorker" in navigator) {
+	window.addEventListener("load", function () {
+	navigator.serviceWorker
+	.register("./serviceWorker.js")
+	.then(res => console.log("service worker registered"))
+	.catch(err => console.log("service worker not registered", err));
+	})
+	}
+	</script>
+	<script>
+	var deferredPrompt = null;
+	// 判断用户是否安装此应用：beforeinstallprompt,如果用户已经安装过了,那么该事件不会再次触发
+	// 需要卸载，然后重新打开浏览器才能再次触发
+	window.addEventListener("beforeinstallprompt", e => {
+	e.preventDefault();
+	deferredPrompt = e;
+	});
+	// 安装完成后触发,即点击安装弹窗中的“安装”后被触发
+	window.addEventListener("appinstalled", () => {
+	deferredPrompt = null;
+	});
+	function addToDesktop() {
+	// 调用prompt()方法触发安装弹窗
+	deferredPrompt.prompt();
+	</script>
+	<!--<button onclick="addToDesktop()">点击安装</button>-->
     <script>
-        Win10.onReady(function () {
-
-            //设置壁纸
-            Win10.setBgUrl({
-                main: './Assets/wallpapers/wallpaper.light.jpg',
-                mobile: './Assets/wallpapers/mobile.light.jpg',
-            });
-
-            Win10.setAnimated([
-                'animated flip',
-                'animated bounceIn',
-            ], 0.01);
-
-            setTimeout(function () {
-                Win10.newMsg('欢迎访问', '欢迎访问 <a target="_blank" href="https://cjhdevact.github.io">Cjhdevact 的 Github 个人主页</a>！建议使用 Chrome，Edge，Firefox 等浏览器访问。')
-            }, 3000);
-            /*
-            Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729) //ie5
-            Mozilla/4.0(compatible; MSIE 6.0; Windows NT 5.1) //IE
-            Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729) //ie7
-            Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729) //ie8
-            Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729) //ie9
-            Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729) //ie10
-            Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; rv:11.0) like Gecko //ie11
-            Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0 //firefox
-            Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 OPR/101.0.0.0 //opera
-            Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.76 //Edge
-            Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 //Chrome
-            Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Nokia; Lumia 520) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0 //Windows Phone
-            Mozilla/5.0(iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26(KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25 // Mac OS
-            */
-            
-            //console.log(navigator.userAgent);
-            var userAgent = navigator.userAgent;
-            if (/MSIE|Trident/.test(userAgent)) {
-                if (/MSIE 5.0/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 5，代理字符串：' + userAgent)
-                    }, 1000);
-                    alert('当前页面已停止支持当前浏览器，可能会出现页面错误问题。');
-                } else if (/MSIE 6.0/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 6，代理字符串：' + userAgent)
-                    }, 1000);
-                    alert('当前页面已停止支持当前浏览器，可能会出现页面错误问题。');
-                } else if (/MSIE 7.0/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 5 或 7，代理字符串：' + userAgent)
-                    }, 1000);
-                    alert('当前页面已停止支持当前浏览器，可能会出现页面错误问题。');
-                } else if (/MSIE 8.0/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 8，代理字符串：' + userAgent)
-                    }, 1000);
-                    alert('当前页面已停止支持当前浏览器，可能会出现页面错误问题。');
-                } else if (/MSIE 9.0/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 9，代理字符串：' + userAgent)
-                    }, 1000);
-                    alert('当前页面已停止支持当前浏览器，可能会出现页面错误问题。');
-                } else if (/MSIE 10.0/.test(userAgent)) {
-                    if (/Windows Phone/.test(userAgent)) {
-                        setTimeout(function () {
-                            Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 10（Windows Phone），代理字符串：' + userAgent)
-                        }, 1000);
-                    } else {
-                        setTimeout(function () {
-                            Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 10，代理字符串：' + userAgent)
-                        }, 1000);
-                    }
-                } else {
-                    if (/Windows Phone/.test(userAgent)) {
-                        setTimeout(function () {
-                            Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 11（Windows Phone），代理字符串：' + userAgent)
-                        }, 1000);
-                    } else {
-                        setTimeout(function () {
-                            Win10.newMsg('浏览器提示', '当前使用的浏览器为 Internet Explorer 11，代理字符串：' + userAgent)
-                        }, 1000);
-                    }
-                }
-            } else if (/Firefox/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Firefox（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Firefox（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Firefox（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Firefox，代理字符串：' + userAgent)
-                    }, 1000);
-                }
-            } else if (/OPR/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Opera（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Opera（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Opera（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Opera，代理字符串：' + userAgent)
-                    }, 1000);
-                }
-            } else if (/bing.com/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Bing（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Bing（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Bing（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Bing，代理字符串：' + userAgent)
-                    }, 1000);
-                }
-            } else if (/Edg/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Edge（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Edge（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Edge（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Edge，代理字符串：' + userAgent)
-                    }, 1000);
-                }
-		    } else if (/Wechat/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows），代理字符串：' + userAgent)
-                    }, 1000);
-                }
-		    } else if (/WeChat/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 微信（Windows），代理字符串：' + userAgent)
-                    }, 1000);
-                }
-		    } else if (/Huawei/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 华为浏览器（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 华为浏览器（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 华为浏览器（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 华为浏览器（Windows），代理字符串：' + userAgent)
-                    }, 1000);
-                }
-		    } else if (/baidu/.test(userAgent)) {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 百度浏览器（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 百度浏览器（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 百度浏览器（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 百度浏览器（Windows），代理字符串：' + userAgent)
-                    }, 1000);
-                }
-            } else {
-                if (/Windows Phone/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Chrome（Windows Phone），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Android/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Chrome（Android），代理字符串：' + userAgent)
-                    }, 1000);
-                } else if (/Mac OS/.test(userAgent)) {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Chrome（Mac OS），代理字符串：' + userAgent)
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        Win10.newMsg('浏览器提示', '当前使用的浏览器为 Chrome，代理字符串：' + userAgent)
-                    }, 1000);
-                }
-            }
-            //setTimeout(function () {
-            //    Win10.openUrl('//win10ui.yuri2.cn/src/broadcast.html','<i class="fa fa-newspaper-o icon red"></i>最新资讯',[['300px', '380px'],'rt'])
-            //},2000);
-
-
-        });
-
-        function W_Bugs() {
-            layer.alert(':( Are you sure? ~~~~~~', {}, function (index) {
-                Win10.enableFullScreen();
-                var bluebkg = $('<img src="./Assets/wallpapers/bsodbkg.png" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
-                var blue = $('<img src="./Assets/wallpapers/bsod.png" style="position: fixed;width: 1024 px;height:768 px;top:0;z-index:9999999999" />');
-                setTimeout(function () {
-                    $('body').append(bluebkg);
-                    $('body').append(blue);
-                }, 3000);
-                setTimeout(function () {
-                    blue.remove();
-                    bluebkg.remove();
-                    Win10.disableFullScreen();
-                    setTimeout(function () {
-                        layer.msg(':( 你的电脑遇到了前所未有的问题，需要重新启动。');
-                    }, 2000);
-                }, 7000);
-                document.body.onbeforeunload = function () { };
-                //window.location.href="about:blank";
-                //window.close();
-                //layer.close(index);
-            });
-
-        }
-    </script>
-</head>
-
-<body>
-    <div id="win10">
-        <div class="desktop">
-            <div id="win10-shortcuts" class="shortcuts-hidden">
-                <div class="shortcut"
-                    onclick="Win10.openUrl('./projects.html','<img class=\'icon\' src=\'./Assets/icon/projects.png\'/>个人项目')">
-                    <img class="icon" src="./Assets/icon/projects.png" />
-                    <div class="title">个人项目</div>
-                </div>
-                <div class="shortcut"
-                    onclick="Win10.openUrl('./downloads.html','<img class=\'icon\' src=\'./Assets/icon/downs.png\'/>下载')">
-                    <img class="icon" src="./Assets/icon/downs.png" />
-                    <div class="title">下载</div>
-                </div>
-                <div class="shortcut"
-                    onclick="Win10.openUrl('./historys.html','<img class=\'icon\' src=\'./Assets/icon/historys.png\'/>历史页面')">
-                    <img class="icon" src="./Assets/icon/historys.png" />
-                    <div class="title">历史版本</div>
-                </div>
-                <div class="shortcut"
-                    onclick="window.open('https://github.com/cjhdevact')">
-                    <img class="icon" src="./Assets/icon/Github.png" />
-                    <div class="title">Github</div>
-                </div>
-				<div class="shortcut"
-                    onclick="window.open('https://gitee.com/cjhdevact')">
-                    <img class="icon" src="./Assets/icon/gitee.png" />
-                    <div class="title">Gitee</div>
-                </div>				
-                <!--<div class="shortcut" onclick="window.open('https://github.com/cjhdevact')">
-                <img class="icon" src="./img/icon/Github.png"/>
-                <div class="title">Github</div>
-            </div>-->
-            </div>
-            <div id="win10-desktop-scene"></div>
-        </div>
-        <div id="win10-menu" class="hidden">
-            <div class="list win10-menu-hidden animated animated-slideOutLeft">
-                <!--<div class="item"><i class="red icon fa fa-wrench fa-fw"></i><span>API</span></div>
-            <div class="sub-item" onclick="Win10.openUrl('./child.html','子页')">父子页沟通</div>
-            <div class="sub-item" onclick="Win10.commandCenterOpen()">打开消息中心</div>
-            <div class="sub-item" onclick="Win10.newMsg('API测试','通过API可以发送消息至消息中心，自定义标题与内容(点击我试试)',function() {alert('click')})">发送带回调的消息</div>
-            <div class="sub-item" onclick="Win10.menuClose()">关闭菜单</div>
-            <div class="item" ><i class="blue icon fa fa-gavel fa-fw"></i>辅助工具</div>
-            <div class="sub-item" onclick="Win10.openUrl('win10ui.yuri2.cn/src/tools/builder-shortcut.html','图标代码生成器')">桌面图标代码生成器</div>
-            <div class="sub-item" onclick="Win10.openUrl('win10ui.yuri2.cn/src/tools/builder-tile.html','磁贴代码生成器')">磁贴代码生成器</div>
-            <div class="sub-item" onclick="Win10.openUrl('win10ui.yuri2.cn/src/tools/builder-menu.html','菜单代码生成器')">菜单代码生成器</div>
-            <div class="item" onclick="Win10.aboutUs()"><i class="purple icon fa fa-info-circle fa-fw"></i>关于</div>-->
-                <!--<div class="item" onclick="layer.open({
-                title:'支持作者',
-                type: 1,
-                area:'300px',
-                offset:'50px',
-                shadeClose:true,
-                content: '<img width=\'300\' src=\'./img/presentation/donation.jpg\' />'
-            })"><i class="green icon fa fa-thumbs-up fa-fw"></i>捐赠</div>
-            <div class="item" onclick=" Win10.exit();"><i class="black icon fa fa-power-off fa-fw"></i>关闭</div>-->
-                <div class="item"><i class="gray icon fa fa-folder fa-fw"></i>实用功能</div>
-                <div class="sub-item" onclick="W_Bugs();"><i class="purple icon fa fa-bug fa-fw"></i> :(</div>
-                <!--window.open('AppList.html','_self')
-			 <div class="sub-item" onclick="Win10.openUrl('https://cjhdevact.gthub.io/bsodemu.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');"><i class="purple icon fa fa-bsod fa-fw"></i><img style="width: 36px;height: 36px;margin: 4px auto" class="icon" src="./Assets/bsodlg.png"/>蓝屏模拟器</div>-->
-                <div class="sub-item"
-                    onclick="Win10.openUrl('./bsodemu.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');">
-                    <i class="blue icon fa fa-gavel fa-fw"></i>蓝屏模拟器 1.0</div>
-                <div class="sub-item"
-                    onclick="Win10.openUrl('./bsodemuv2.html','<img class=\'icon\' src=\'./Assets/bsodlg.png\'/>蓝屏模拟器');">
-                    <i class="blue icon fa fa-gavel fa-fw"></i>蓝屏模拟器 1.2</div>
-                <div class="sub-item"
-                    onclick="Win10.openUrl('./random.html','<img class=\'icon\' src=\'./Assets/app.png\'/>随机数生成器');"><i
-                        class="red icon fa fa-gavel fa-fw"></i>随机数生成器</div>
-                <div class="sub-item"
-                    onclick="Win10.openUrl('./pseudo.html','<img class=\'icon\' src=\'./Assets/app.png\'/>伪本地化 （Pseudo-localization） 翻译器');">
-                    <i class="green icon fa fa-gavel fa-fw"></i>伪本地化翻译器</div>
-                <div class="sub-item" onclick="window.open('./Win8OOBE.html');"><i
-                        class="green icon fa fa-gavel fa-fw"></i>Win8 OOBE</div>
-                <div class="sub-item" onclick="window.open('./Win8OOBEEN.html');"><i
-                            class="red icon fa fa-gavel fa-fw"></i>Win8 OOBE (英语)</div>        
-                <div class="sub-item" onclick="window.open('./Win10OOBE.html');"><i
-                        class="purple icon fa fa-gavel fa-fw"></i>Win10 OOBE</div>
-                <div class="sub-item" onclick="Win10.commandCenterToggle()"><i
-                        class="white icon fa fa fa-comment-o fa-fw"></i>通知中心</div>
-                <div class="item" onclick="Win10.aboutUs()"><i class="blue icon fa fa-info-circle fa-fw"></i>关于</div>
-                <div class="item" onclick="Win10.exit();"><i class="red icon fa fa-power-off fa-fw"></i>关闭</div>
-            </div>
-            <div class="blocks">
-                <div class="menu_group">
-                    <div class="title">
-                        应用
-                    </div>
-                    <div loc="1,1" size="2,2" class="block"
-                        onclick="Win10.openUrl('./projects.html','<img class=\'icon\' src=\'./Assets/icon/projects.png\'/>个人项目')">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/projects.png">
-                            <div class="win10-block-content-text">个人项目</div>
-                        </div>
-                    </div>
-                    <div loc="3,1" size="4,2" class="block"
-                        onclick="Win10.openUrl('./downloads.html','<img class=\'icon\' src=\'./Assets/icon/downs.png\'/>下载')">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/downs.png">
-                            <div class="win10-block-content-text">下载</div>
-                        </div>
-                    </div>
-					<div loc="1,3" size="2,2" class="block"
-                        onclick="window.open('https://github.com/cjhdevact')">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/Github.png">
-                            <div class="win10-block-content-text">Github</div>
-                        </div>
-                    </div>
-					<div loc="3,3" size="2,2" class="block"
-                        onclick="window.open('https://gitee.com/cjhdevact')">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/gitee.png">
-                            <div class="win10-block-content-text">Gitee</div>
-                        </div>
-                    </div>
-                    <div loc="5,3" size="2,2" class="block" onclick="Win10.UseDark()">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/color.dark.png">
-                            <div class="win10-block-content-text">深色模式</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu_group">
-                    <div class="title">
-                        其它
-                    </div>
-                    <div loc="1,1" size="2,2" class="block" onclick="Win10.aboutUs();">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/about.png">
-                            <div class="win10-block-content-text">关于</div>
-                        </div>
-                    </div>
-                    <div loc="1,3" size="2,2" class="block"
-                        onclick="Win10.openUrl('./feedback.html','<img class=\'icon\' src=\'./Assets/icon/FeedBack.png\'/>反馈中心')">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/FeedBack.png">
-                            <div class="win10-block-content-text">反馈中心</div>
-                        </div>
-                    </div>
-                    <div loc="3,1" size="2,2" class="block" onclick="Win10.exit();">
-                        <div class="content">
-                            <img style="width: 55px;height: 55px;margin: 2px auto;display: block"
-                                src="./Assets/icon/exit.png">
-                            <div class="win10-block-content-text">关闭</div>
-                        </div>
-                    </div>
-                </div>
-                <!--
-            <div class="menu_group">
-                <div class="title">
-                    应用示例
-                </div>
-                <div loc="1,1" size="6,3" class="block">
-                    <div class="content red detail" >
-                        <iframe style="margin-top: 10px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=264 height=110 src="//music.163.com/outchain/player?type=2&id=110771&auto=0&height=90"></iframe>
-                    </div>
-                    <div class="content red cover">
-                        <img width="264" style="position: relative;top: -50px;" src="./img/presentation/wangyiyun.gif" />
-                    </div>
-                </div>
-                <div loc="1,4" size="4,4" class="block">
-                    <div class="content blue cover" style="font-size: 30px;line-height: 176px;text-align: center">
-                        <i class="fa fa-cloud fa-fw"></i> 天气
-                    </div>
-                    <div class="content detail" style="background-color: rgb(46,147,217)">
-                        <iframe src="//www.seniverse.com/weather/weather.aspx?uid=U43DF172E7&cid=CHBJ000000&l=&p=SMART&a=1&u=C&s=13&m=2&x=1&d=1&fc=&bgc=2E93D9&bc=&ti=0&in=0&li=" frameborder="0" scrolling="no" width="200" height="300" allowTransparency="true"></iframe>
-                    </div>
-                </div>
-                <div loc="5,4" size="2,2" class="block">
-                    <div class="content">
-                        <img style="display: inline-block;border-radius: 4px" width="88px" src="http://q2.qlogo.cn/headimg_dl?bs=824831811&dst_uin=824831811&src_uin=824831811&fid=824831811&spec=100&url_enc=0&referer=bu_interface&term_type=PC"/>
-                    </div>
-                </div>
-                <div loc="5,6" size="2,2" class="block" onclick="win10_forgive_me()">
-                    <div class="content red">
-                        <div style="text-align: center;font-size: 30px;line-height: 44px"><i class="fa fa-bug fa-fw"></i></div>
-                        <div style="text-align: center;font-size: 16px;line-height: 44px">别点我</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu_group">
-                <div class="title">
-                    常用场景
-                </div>
-                <div loc="1,1" size="4,3" class="block">
-                    <div class="content" style="background-color: orangered">
-                        <div class="win10-block-content-text" style="font-size: 26px;line-height: 88px">WIN10-UI</div>
-                        <div class="win10-block-content-text">显示信息</div>
-                    </div>
-                </div>
-                <div loc="5,1" size="2,1" class="block">
-                    <div class="content" style="background-color: green">
-                        <div  class="win10-block-content-text">文字按钮</div>
-                    </div>
-                </div>
-                <div loc="5,2" size="2,2" class="block">
-                    <div class="content">
-                        <img style="width: 40px;height: 40px;margin: 5px auto;display: block" src="./img/icon/baidu.png">
-                        <div class="win10-block-content-text">图标按钮</div>
-                    </div>
-                </div>
-                <div loc="1,4" size="6,3" class="block">
-                    <div class="content" style="background: url('./img/presentation/1.png');background-size: auto">
-                        <div style="line-height:132px;text-align: center;">显示图片</div>
-                    </div>
-                </div>
-                <div loc="1,7" size="2,1" class="block">
-                    <div class="content" style="background-color: grey" onclick="Win10.openUrl('//www.baidu.com')">
-                        <div class="win10-block-content-text">内部链接</div>
-                    </div>
-                </div>
-                <div loc="3,7" size="2,1" class="block">
-                    <div class="content" style="background-color: blue" onclick="window.open('https://www.baidu.com')">
-                        <div class="win10-block-content-text">外部链接</div>
-                    </div>
-                </div>
-            </div>-->
-            </div>
-            <div id="win10-menu-switcher"></div>
-        </div>
-        <div id="win10_command_center" class="hidden_right">
-            <div class="title">
-                <h4 style="float: left">通知中心 </h4>
-                <span id="win10_btn_command_center_clean_all">全部清除</span>
-            </div>
-            <div class="msgs"></div>
-        </div>
-        <div id="win10_task_bar">
-            <div id="win10_btn_group_left" class="btn_group">
-                <!--<div id="win10_btn_win" class="btn"><span class="fa fa-windows"></span></div>-->
-                <div id="win10_btn_win" class="btn"><img
-                        style="width: 27px;height: 27px;margin: 7px auto;display: block" src="./Assets/logo.png"></div>
-                <div class="btn" id="win10-btn-browser"><img
-                        style="width: 27px;height: 27px;margin: 7px auto;display: block" src="./Assets/icon/edge.png">
-                </div>
-            </div>
-            <div id="win10_btn_group_middle" class="btn_group"></div>
-            <div id="win10_btn_group_right" class="btn_group">
-                <div class="btn" id="win10_btn_time">
-                    <!--0:00<br/>-->
-                    <!--1993/8/13-->
-                </div>
-                <div class="btn" id="win10_btn_command"><img
-                        style="width: 30px;height: 30px;margin: 4px auto;display: block"
-                        src="./Assets/icon/msg.light.png"></div>
-                <div class="btn" id="win10_btn_show_desktop"></div>
-            </div>
-        </div>
-    </div>
+		window.location.href="./index.light.html";
+	</script>
 </body>
-
 </html>
