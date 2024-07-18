@@ -1,32 +1,32 @@
 {
- "name": "Cjhdevact Github 主页",
- "short_name": "Cjhdevact 主页",
- "description": "Cjhdevact Github 个人主页",
- "theme_color": "#2d94ff",
- "background_color": "#2d94ff",
- "display": "fullscreen",
- "scope": "/",
- "start_url": "/",
- "orientation": "portrait"
- "icons":
- {
- "src": "Assets/logo72.png",
- "type": "image/png",
- "sizes": "72x72"
- },
- {
- "src": "Assets/logo96.png",
- "type": "image/png",
- "sizes": "96x96"
- },
- {
- "src": "Assets/logo144.png",
- "type": "image/png",
- "sizes": "144x144"
- }
- {
- "src": "Assets/logo.png",
- "type": "image/png",
- "sizes": "256x256"
- }
+  "name": "Cjhdevact Github 主页",
+  "short_name": "Cjhdevact 主页",
+  "description": "Cjhdevact Github 个人主页",
+  "icons": [
+    {
+      "src": "Assets/logo72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "Assets/logo96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+	{
+      "src": "Assets/logo144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "Assets/logo.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#000",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
 }
