@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="renderer" content="ie-comp" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
+<title>2018个税新政减税计算器</title>
+<!-- 通用样式和框架js  /xxmh/resources -->
+<link href="/xxmh/resources/skin/css/comon0.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/xxmh/resources/skin/js/jquery.js"></script>
+	<style type="text/css">
+		
+		.searchCriteria .btn05{
+			position:relative;
+			right:0px;
+			margin-top:-14px;
+		}
+		.searchCriteria tr{
+			height:30px;
+		}
+		.searchCriteria td{
+			width:190px;
+			font-size:1.2em;
+			font-family:微软雅黑;
+		}
+	</style>
+</head>
+<body class="padd01">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="top_title">
+  <tr>
+    <td width="46"><img src="/xxmh/resources/skin/images/icons/left_icon_gsjsq_b.png"></td>
+    <td><div class="big_title">2018个税新政减税计算器</div></td>
+  </tr>
+</table>
+	<!-- 定义angular 作用范围  ng-app="angulajs_tycxApp" ng-controller="angulajs_customersCtrl"-->
+	<div class="user_box01"  style="margin-top:20px;" >
+		<div class="show01">
+			<div class="searchbox">
+				<div class="searchCriteria" style="border-bottom:none;margin-left:35%">
+					<table border="0" cellspacing="0" cellpadding="0" >
+						<tr>
+							<td colspan="2" height="10px" style="font-size:17px;font-weight:bold" >个税计算器</td>
+						</tr>
+						<tr style="height:51px">
+							<td align="left" style="color: #999;width:120px" >税前月收入<span style="color: red;">*</span>：</td>
+							<td style="color: #999;width:260px"><input type="text" name="gzxjsr"  id="gzxjsr" class="input01css" value="0.00" style="text-align:right;;color:#999;width:228px" onclick="clearZero('gzxjsr');" onblur="recoverZero('gzxjsr');"/>元</td>
+							
+						</tr>
+						<tr>
+							<td align="left" style="color: #999;width:120px">社保公积金：</td>
+							<td style="color: #999;width:260px"><input type="text" name="zxkcfy" id="zxkcfy" class="input01css" value="0.00"  style="text-align:right;color:#999;width:228px" onclick="clearZero('zxkcfy');" onblur="recoverZero('zxkcfy');"/>元</td>
+						</tr>
+						<tr >
+							<td colspan="2" height="10px"></td>
+						</tr>
+						<tr>
+							<td align="right" colspan='2' style="text-align:center;font-size: 14px;font-family:微软雅黑"><input class="btn btn05" onclick="calsr()" type="button" style="margin-top:3px;"  value="开始计算"></td>
+			
+						</tr>
+						</table>
+						<table border="0" cellspacing="0" cellpadding="0" >
+						<tr>
+							<td colspan="2" height="10px" style="font-size:17px;font-weight:bold" >计算结果</td>
+						</tr>
+						<tr style="height:9px">
+						    <td colspan="2"></td>
+						</tr>
+						<tr>
+							<td align="left" style="color: #999">税后收入：</td>
+							<td>
+							<div id="shsr" style="font-size:17px;color:#999"align="right" >0.00 元</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="color: #999">新税法计算税额：</td>
+							<td>
+							<div id="xjsfjssr" style="font-size:17px;color:#999" align="right" >0.00 元</div>
+							</td>
+							
+							
+						</tr>
+						<tr>
+							<td align="left" style="color: #999">旧税法计算税额：</td>
+							<td>
+							<div id="jsfjssr" style="font-size:17px;color:#999" align="right">0.00 元</div>
+							</td>
+							
+							
+						</tr>
+					
+						
+						
+						<tr style="height:41px">
+							<td colspan="2" height="10px" style="font-size:17px;;font-weight:bold" >少缴税额</td>
+						</tr>
+						<tr style="height:41px">
+						
+						    <td colspan="2" height="10px" align="center"><span id="sjsr" style="font-size:25px;color:red;font-weight:bold" >0.00 </span><span style="color:red">元</span></td>
+						</tr>
+						
+					</table>
+				</div>
+				<div style="margin-left:35%">	
+					<p style="padding: 20px 0; color: #999;letter-spacing:1px;font-size: 12px;font-family:微软雅黑;" >
+						温馨提示<br/>
+						1.对纳税人在2018年10月1日（含）后实际取得的工资、薪金所得，<br/>减除费用按5000元/月执行，并适用新税率表。<br/>
+						2. 扣除的社保、公积金仅为个人部分。<br/>
+						3. 此计算器为简易计算，未将全部项目列入，仅供参考。如有疑问，<br/>请联系12366或者咨询当地税务机关。
+						</P>
+					</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+//旧税率对象 ，属性：sl（税率）、sskcs（速算扣除数）
+     var slXxOldObj={};
+	 
+//新税率对象 ，属性：sl（税率）、sskcs（速算扣除数）
+     var slXxNewObj={};	 
+	 
+ 
+ //计算税额，公式：（工资、薪金收入（元/月）-专项扣除费用（即社保费和公积金（个人部分））-基本扣除费用）*税率-速算扣除数
+	 function calsr(){
+	    
+	    var gzxjsr =   $.trim($('#gzxjsr').val());    //工资、薪金收入（元/月）
+	    var zxkcfy  =  $.trim($('#zxkcfy').val());    //专项扣除费用（元/月）
+		document.getElementById('gzxjsr').value=gzxjsr;
+		document.getElementById('zxkcfy').value=zxkcfy;
+		if(gzxjsr == ''){
+		    alert("请填写工资、薪金收入（元/月）");
+			return "";
+		}
+		
+		if( isNaN(gzxjsr)){
+		    alert("工资、薪金收入（元/月）请填写数值。");
+			return "";
+		}
+		
+		if(zxkcfy == ''){
+		    document.getElementById('zxkcfy').value=0;
+		}
+		
+		if(isNaN(gzxjsr)){		
+		    alert("请填写数值社保费和公积金（个人部分）。");
+			return "";
+		}
+		
+	    var jqyynssde =     gzxjsr -   zxkcfy - 3500;                                           //全月应纳税所得额
+		var xqyynssde =     gzxjsr -   zxkcfy - 5000;  
+		
+		
+		var sjsr = 0;
+		var jsfjssr = 0;
+		var xjsfjssr = 0;
+		var shsr = 0;
+		
+		
+		//新旧税法都不用缴税
+		if(jqyynssde <= 0){
+			
+			shsr =  roundnum(gzxjsr - zxkcfy - xjsfjssr );
+			displayResult(jsfjssr, sjsr, shsr,xjsfjssr);		
+		}else if(jqyynssde > 0 && xqyynssde <= 0){      //旧税法要缴税而新税法不用
+		    getOldSl(jqyynssde);
+			jsfjssr = roundnum( jqyynssde * slXxOldObj.sl - slXxOldObj.sskcs );	
+			sjsr = roundnum( jsfjssr - xjsfjssr);
+			shsr =  roundnum(gzxjsr - zxkcfy - xjsfjssr );
+			displayResult(jsfjssr, sjsr, shsr, xjsfjssr);
+		}else{    //新旧税法都需要缴税
+			//按新税率计算
+			getOldSl(jqyynssde);
+			getNewSl(xqyynssde);
+			jsfjssr = roundnum( jqyynssde * slXxOldObj.sl - slXxOldObj.sskcs );
+			xjsfjssr =  roundnum(  xqyynssde* slXxNewObj.sl - slXxNewObj.sskcs  );
+			sjsr = roundnum( jsfjssr - xjsfjssr);
+			shsr =  roundnum(gzxjsr - zxkcfy - xjsfjssr );
+			displayResult(jsfjssr, sjsr, shsr, xjsfjssr);
+		}		
+		//按旧税率计算
+	 }
+	 
+	 //点击时若value为0.00则清除0.00
+	 function clearZero(id){
+	     var value = document.getElementById(id).value;
+		 if(value=="0.00"){
+			document.getElementById(id).value=" ";
+		}
+	 }
+	 
+	 //失焦时若value为""则恢复为0.00
+	 function recoverZero(id){
+	 var value = document.getElementById(id).value;
+		 if(value==""){
+			document.getElementById(id).value="0.00";
+		 }
+	 }
+	 
+	 
+	function displayResult(jsfjssr, sjsr, shsr, xjsfjssr){
+	    if(jsfjssr <= 0)
+		    jsfjssr = '0.00';
+		document.getElementById('jsfjssr').innerText = jsfjssr+" 元";
+		if(sjsr <= 0)
+		    sjsr = '0.00';
+	    document.getElementById('sjsr').innerText = sjsr+"  ";
+		if(shsr <= 0)
+		    shsr = '0.00';
+		document.getElementById('shsr').innerText = shsr+" 元";
+		if(xjsfjssr <= 0)
+		    xjsfjssr = '0.00';
+		document.getElementById('xjsfjssr').innerText = xjsfjssr+" 元";
+	 }
+	 
+	 function roundnum(num){
+	   var value=Math.round(num*100)/100;
+	   var s=value.toString().split(".");
+	  if(s.length==1){
+		value=value.toString()+".00";
+		return value;
+	  }
+	 if(s.length>1){
+		if(s[1].length<2){
+			value=value.toString()+"0";
+		}
+		return value;
+	}
+	}
+	 
+	 
+ 
+ //获取旧税率 (全月应纳税所得额:qyynssde)
+     function getNewSl(qyynssde){
+
+	 
+	     if(qyynssde <= 3000){
+		     slXxNewObj.sl = 0.03;
+			 slXxNewObj.sskcs = 0;
+		 }
+		 
+		 if( 3000  < qyynssde   && qyynssde <= 12000){
+		     slXxNewObj.sl = 0.1;
+			 slXxNewObj.sskcs = 210;
+		 }
+		 
+		
+		 if( 12000  < qyynssde  && qyynssde <= 25000){
+		     slXxNewObj.sl = 0.20;
+			 slXxNewObj.sskcs = 1410;
+		 }
+		 
+		 if( 25000  < qyynssde  && qyynssde <= 35000){
+		     slXxNewObj.sl = 0.25;
+			 slXxNewObj.sskcs = 2660;
+		 }
+		 
+		 if( 35000  < qyynssde  && qyynssde <= 55000){
+		     slXxNewObj.sl = 0.3;
+			 slXxNewObj.sskcs = 4410;
+		 }
+		 
+		if( 55000  < qyynssde  && qyynssde <= 80000){
+		     slXxNewObj.sl = 0.35;
+			 slXxNewObj.sskcs = 7160;
+		 }
+		 
+		if( 80000  < qyynssde ){
+		     slXxNewObj.sl = 0.45;
+			 slXxNewObj.sskcs = 15160;
+		 }
+
+			
+	 }
+ 
+ //获取新税率 (全月应纳税所得额:qyynssde)
+	function getOldSl(qyynssde){
+	     if(qyynssde <= 1500){
+		     slXxOldObj.sl = 0.03;
+			 slXxOldObj.sskcs = 0;
+		 }
+		 
+		 
+		 if(1500 < qyynssde  && qyynssde <= 4500){
+		     slXxOldObj.sl = 0.1;
+			 slXxOldObj.sskcs = 105;
+		 }
+		 
+		 if(4500 < qyynssde  && qyynssde <= 9000){
+		     slXxOldObj.sl = 0.2;
+			 slXxOldObj.sskcs = 555;
+		 }
+		 
+		  if(9000 < qyynssde  && qyynssde <= 35000){
+		     slXxOldObj.sl = 0.25;
+			 slXxOldObj.sskcs = 1005;
+		 }
+		 
+		   if(35000 < qyynssde  && qyynssde <= 55000){
+		     slXxOldObj.sl = 0.3;
+			 slXxOldObj.sskcs = 2755;
+		 }
+		 
+		 if(55000 < qyynssde  && qyynssde <= 80000){
+		     slXxOldObj.sl = 0.35;
+			 slXxOldObj.sskcs = 5505;
+		 }
+		 
+		 if(80000 < qyynssde){
+		     slXxOldObj.sl = 0.45;
+			 slXxOldObj.sskcs = 13505;
+		 }	 
+	 }
+</script>
