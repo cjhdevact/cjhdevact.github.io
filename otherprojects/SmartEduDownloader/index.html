@@ -1,6 +1,6 @@
 <!-------------------------
 ******************************
-SmartEduDownloader -帮助
+SmartEduDownloader 
 名称：otherprojects/SmartEduDownloader/index.html
 作者：CJH
 The file license under the MIT License
@@ -14,7 +14,7 @@ The file license under the MIT License
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
     <link rel="icon" href="../..Assets/logo.png">
-	<link rel="SHORTCUT ICON" href="../../Assets/logo.png" type="image/x-icon"/>
+	<link rel="SHORTCUT ICON" href="./smartedu.ico" type="image/x-icon"/>
     <title>SmartEduDownloader 主页</title>
 	<!--<script type="module" src="https://cjhdevact.github.io/js/web-components.min.js"></script>-->
 	<script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
@@ -188,26 +188,40 @@ The file license under the MIT License
     </style>
 </head>
 <body>
-	<fluent-button class="backbutton" onclick="window.open('../index.html','_self')">
-       <img src="../../Assets/icon/back.png">
-    </fluent-button>
-    <h1 class="page-title">Cjhdevact 个人项目 > 其他项目</h1>
+    <center>
+    <img src="./smartedu.ico" style="width: 72px;height: 72px;margin: 7px auto;display: block" >
+    <h1>SmartEduDownloader</h1>
+	<h3>国家中小学智慧教育平台教材解析下载工具</h3>
+	</center>
     <div class="ContentEntrance">
-        <h3 class="more">SmartEduDownloader</h3>
+        <h3>本软件是一款专为学生，家长，老师设计的实用工具，旨在简化下载教材时的繁琐工作。它允许用户通过粘贴课本链接的方式，直接下载课本，极大地提高了工作效率，软件支持Windows XP/ Vista / 7 / 8 / 8.1 / 10 / 11 及以上操作系统</h3>
+		<h3>SmartEduDownloader 可以解析下载国家中小学智慧教育平台教材的文档地址，支持批量下载，需要.Net Framwork 4.0以上版本支持。</h3>
         <div class="grid-container">
+		    <fluent-button class="grid-item" onclick="window.open('https://gitee.com/cjhdevact/SmartEduDownloader/releases')">
+				<img src="../../Assets/icon/downs.png">
+                <span class="title">下载本软件</span>
+            </fluent-button>
             <fluent-button class="grid-item" onclick="window.open('./Help/index.html')">
-				<img src="../../Assets/icon/webfile.png">
-                <span class="title">帮助</span>
+				<img src="./help.ico">
+                <span class="title">使用教程</span>
             </fluent-button>
 			<fluent-button class="grid-item" onclick="window.open('https://github.com/cjhdevact/SmartEduDownloader')">
-				<img src="../../Assets/icon/webfile.png">
-                <span class="title">Github</span>
+				<img src="../../Assets/icon/Github.png">
+                <span class="title">Github 仓库地址</span>
+            </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://gitee.com/cjhdevact/SmartEduDownloader')">
+				<img src="../../Assets/icon/gitee.png">
+                <span class="title">Gitee 仓库地址</span>
+            </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://github.com/cjhdevact/SmartEduDownloader/issues')">
+				<img src="../../Assets/icon/FeedBack.png">
+                <span class="title">问题反馈</span>
             </fluent-button>
         </div>
 		<br>
 		<center>
-		<fluent-button class="mbutton" onclick="window.open('./index.html')">
-                <span class="title">新标签页打开</span>
+		<fluent-button class="mbutton" onclick="window.open('cjhdevact.github.io')">
+                <span class="title">返回本网站主页</span>
         </fluent-button>
 		</center>
 		<br>
