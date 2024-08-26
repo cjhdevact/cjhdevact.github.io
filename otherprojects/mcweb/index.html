@@ -1,10 +1,8 @@
 <!-------------------------
 ******************************
 Cjhdevact Github 主页 - 个人项目
-名称：otherprojects/index.html
+名称：otherprojects/mcweb/index.html
 作者：CJH
-历史：
-  CJH 编辑于 2024-7-12
 The file license under the MIT License
 版权所有 © CJH。
 ******************************
@@ -15,11 +13,18 @@ The file license under the MIT License
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
-    <link rel="icon" href="../Assets/logo.png">
-	<link rel="SHORTCUT ICON" href="../Assets/logo.png" type="image/x-icon"/>
+    <link rel="icon" href="../..Assets/logo.png">
+	<link rel="SHORTCUT ICON" href="../../Assets/logo.png" type="image/x-icon"/>
     <title>Cjhdevact Github 主页</title>
 	<!--<script type="module" src="https://cjhdevact.github.io/js/web-components.min.js"></script>-->
-	<script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+	<script type="module" src="https://npm.elemecdn.com/@fluentui/web-components"></script>
+	<!-- 
+	https://unpkg.com
+	CDN:
+	https://npm.elemecdn.com
+	https://cdn.jsdelivr.net/npm
+	 
+	 -->
     <!--<script type="module" src="127.0.0.1/unpkg.com_@fluentui_web-components@2.5.16_dist_web-components.min.js"></script>-->
 	<!--<script type="text/javascript" src="unpkg.com-fluentui_web-components-2.5.16_dist_web-components.min.js"></script>-->
     <style>
@@ -151,7 +156,7 @@ The file license under the MIT License
             bottom: 18px;
             right: 26px;
         }
-
+		
 		.backbutton 
         {
             width: 50px;
@@ -190,38 +195,91 @@ The file license under the MIT License
     </style>
 </head>
 <body>
-	<fluent-button class="backbutton" onclick="window.open('../projects.html','_self')">
-       <img src="../Assets/icon/back.png">
+	<fluent-button class="backbutton" onclick="window.open('../index.html','_self')">
+       <img src="../../Assets/icon/back.png">
     </fluent-button>
-    <h1 class="page-title">Cjhdevact 个人项目</h1>
+    <h1 class="page-title">Cjhdevact 个人项目 > 其他项目</h1>
     <div class="ContentEntrance">
-        <h3 class="more">其他项目</h3>
+        <h3 class="more">Minecraft 网页版链接</h3>
         <div class="grid-container">
-            <fluent-button class="grid-item" onclick="window.open('./LayoutDesign-20240712/index.html','_self')">
-				<img src="./LayoutDesign-20240712/preview/LayoutDesign-20240712.files/excelapp.png">
-                <span class="title">虚构布局图设计-20240712</span>
+            <fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/minecraft-beta/')">
+				<img src="./mc.png">
+                <span class="title">Minecraft Classic (Beta) (games.imc.re)</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./zkmm24/index.html','_self')">
-				<img src="../Assets/icon/webfile.png">
-                <span class="title">茂名市中考成绩查询服务平台（2024年）</span>
+            <fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/eaglercraft/1.8')">
+				<img src="./mc.png">
+                <span class="title">Minecraft 1.8 (Eaglercraft-IMC.RE) (games.imc.re)</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./hwusb/TAS_domestic/EMUI10.0/C00B030/zh-cn/content/06_iot/article/SF-00000007_f101.html')">
-				<img src="../Assets/icon/webfile.png">
-                <span class="title">华为USB充电线说明</span>
+            <fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/eaglercraft/1.8_pe1')">
+				<img src="./mc.png">
+                <span class="title">Minecraft 1.8 (PE1) (Eaglercraft-IMC.RE) (games.imc.re)</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./xxmh/html/bsfw/jscalculator_fix.html')">
-				<img src="./xxmh/resources/skin/images/icons/left_icon_gsjsq_b.png">
-                <span class="title">2018个税新政减税计算器（广东电子税务局）</span>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/eaglercraft/1.8_pe2')">
+				<img src="./mc.png">
+                <span class="title">Minecraft 1.8 (PE2) (Eaglercraft-IMC.RE) (games.imc.re)</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./SmartEduDownloader/index.html')">
-				<img src="./SmartEduDownloader/smartedu.ico">
-                <span class="title">SmartEduDownloader</span>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/eaglercraft/1.5')">
+				<img src="./mc.png">
+                <span class="title">Minecraft 1.5 (Eaglercraft-IMC.RE) (games.imc.re)</span>
             </fluent-button>
-			=<fluent-button class="grid-item" onclick="window.open('./mcweb/index.html')">
-				<img src="./mcweb/mc.ico">
-                <span class="title">MC网页版链接</span>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/eaglercraft/1.3')">
+				<img src="./mc.png">
+                <span class="title">Minecraft 1.3 (Eaglercraft) (games.imc.re)</span>
             </fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/js-minecraft/')">
+				<img src="./mc.png">
+                <span class="title">js-minecraft 1.1.8 (games.imc.re)</span>
+			</fluent-button>
         </div>
+	    <h3 class="more">Minecraft 网页版-下载离线运行版本</h3>
+		<div class="grid-container">
+			<fluent-button class="grid-item" onclick="window.open('https://www.123pan.com/s/H1NUVv-m4phd')">
+				<img src="./mc.png">
+                <span class="title">Minecraft (Eaglercraft) (123网盘) 提取码:mcwb</span>
+			</fluent-button>
+		</div>
+		<h3 class="more">第三方制作的类MC网页版</h3>
+		<div class="grid-container">
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/WebGLCraft/')">
+				<img src="./mc.png">
+                <span class="title">WebGLCraft (games.imc.re)</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/webmc.js.org')">
+				<img src="./mc.png">
+                <span class="title">webmc.js.org (games.imc.re)</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://webmc.js.org')">
+				<img src="./mc.png">
+                <span class="title">webmc.js.org</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/WebCraft/')">
+				<img src="./mc.png">
+                <span class="title">WebCraft (games.imc.re)</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/MinecraftClone/')">
+				<img src="./mc.png">
+                <span class="title">SimonDevCraft (games.imc.re)</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://games.imc.re/ngs/mcjs/play/3DMinecraft/')">
+				<img src="./mc.png">
+                <span class="title">3DMinecraft (games.imc.re)</span>
+			</fluent-button>
+		<h3 class="more">Minecraft 网页版-相关网站</h3>
+		<div class="grid-container">
+			<fluent-button class="grid-item" onclick="window.open('https://mc.sidsk.cn/#game')">
+				<img src="./mc.png">
+                <span class="title">mc.sidsk.cn</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://imc.cab/games')">
+				<img src="./mc.png">
+                <span class="title">ime.cab</span>
+			</fluent-button>
+			<fluent-button class="grid-item" onclick="window.open('https://classic.minecraft.net')">
+				<img src="./mc.png">
+                <span class="title">classic.minecraft.net （Minecraft Classic）（官方网页版）</span>
+			</fluent-button>
+		</div>
+		</div>
 		<br>
 		<center>
 		<fluent-button class="mbutton" onclick="window.open('./index.html')">
