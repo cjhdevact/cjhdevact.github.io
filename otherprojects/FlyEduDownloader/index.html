@@ -1,10 +1,8 @@
 <!-------------------------
 ******************************
-Cjhdevact Github 主页 - 个人项目
-名称：otherprojects/index.html
+FlyEduDownloader 
+名称：otherprojects/FlyEduDownloader/index.html
 作者：CJH
-历史：
-  CJH 编辑于 2024-7-12
 The file license under the MIT License
 版权所有 © CJH。
 ******************************
@@ -15,12 +13,18 @@ The file license under the MIT License
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
-    <link rel="icon" href="../Assets/logo.png">
-	<link rel="SHORTCUT ICON" href="../Assets/logo.png" type="image/x-icon"/>
-    <title>Cjhdevact Github 主页</title>
-	<!--<script type="module" src="https://cjhdevact.github.io/js/web-components.min.js"></script>-->
+    <link rel="icon" href="./FlyEduDownloader.png">
+	<link rel="SHORTCUT ICON" href="./FlyEduDownloader.png" type="image/x-icon"/>
+    <title>飞翔教学资源助手主页</title>
 	<!--<script type="module" src="https://cjhdevact.github.io/js/web-components.min.js"></script>-->
 	<script type="module" src="https://npm.elemecdn.com/@fluentui/web-components"></script>
+	<!-- 
+	https://unpkg.com
+	CDN:
+	https://npm.elemecdn.com
+	https://cdn.jsdelivr.net/npm
+	 
+	 -->
     <!--<script type="module" src="127.0.0.1/unpkg.com_@fluentui_web-components@2.5.16_dist_web-components.min.js"></script>-->
 	<!--<script type="text/javascript" src="unpkg.com-fluentui_web-components-2.5.16_dist_web-components.min.js"></script>-->
     <style>
@@ -152,7 +156,7 @@ The file license under the MIT License
             bottom: 18px;
             right: 26px;
         }
-
+		
 		.backbutton 
         {
             width: 50px;
@@ -191,42 +195,40 @@ The file license under the MIT License
     </style>
 </head>
 <body>
-	<fluent-button class="backbutton" onclick="window.open('../projects.html','_self')">
-       <img src="../Assets/icon/back.png">
-    </fluent-button>
-    <h1 class="page-title">Cjhdevact 个人项目</h1>
+    <center>
+    <img src="./FlyEduDownloader.png" style="width: 72px;height: 72px;margin: 7px auto;display: block">
+	<h1>飞翔教学资源助手</h1>
+	<h3>国家中小学智慧教育平台资源解析下载工具</h3>
+	</center>
     <div class="ContentEntrance">
-        <h3 class="more">其他项目</h3>
+        <h3>本软件原名SmartEduDownloader，是一款专为学生，家长，老师设计的实用工具，旨在简化下载教材以及课程资源时的繁琐工作。它允许用户通过粘贴课本或者课程资源链接的方式，直接下载课本或者课程资源，极大地提高了工作效率，软件支持 Windows XP / Vista / 7 / 8 / 8.1 / 10 / 11 及以上操作系统</h3>
+		<h3>SmartEduDownloader 可以解析下载国家中小学智慧教育平台教材和课程资源地址，支持批量下载，需要.Net Framwork 4.0以上版本支持。</h3>
         <div class="grid-container">
-            <fluent-button class="grid-item" onclick="window.open('./LayoutDesign-20240712/index.html','_self')">
-				<img src="./LayoutDesign-20240712/preview/LayoutDesign-20240712.files/excelapp.png">
-                <span class="title">虚构布局图设计-20240712</span>
+		    <fluent-button class="grid-item" onclick="window.open('https://gitee.com/cjhdevact/FlyEduDownloader/releases')">
+				<img src="../../Assets/icon/downs.png">
+                <span class="title">下载本软件</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./zkmm24/index.html','_self')">
-				<img src="../Assets/icon/webfile.png">
-                <span class="title">茂名市中考成绩查询服务平台（2024年）</span>
+            <fluent-button class="grid-item" onclick="window.open('./Help/index.html')">
+				<img src="../../Assets/icon/help.png">
+                <span class="title">使用教程</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./hwusb/TAS_domestic/EMUI10.0/C00B030/zh-cn/content/06_iot/article/SF-00000007_f101.html')">
-				<img src="../Assets/icon/webfile.png">
-                <span class="title">华为USB充电线说明</span>
+			<fluent-button class="grid-item" onclick="window.open('https://github.com/cjhdevact/FlyEduDownloader')">
+				<img src="../../Assets/icon/Github.png">
+                <span class="title">Github 仓库地址</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./xxmh/html/bsfw/jscalculator_fix.html')">
-				<img src="./xxmh/resources/skin/images/icons/left_icon_gsjsq_b.png">
-                <span class="title">2018个税新政减税计算器（广东电子税务局）</span>
+			<fluent-button class="grid-item" onclick="window.open('https://gitee.com/cjhdevact/FlyEduDownloader')">
+				<img src="../../Assets/icon/gitee.png">
+                <span class="title">Gitee 仓库地址</span>
             </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./FlyEduDownloader/index.html')">
-				<img src="./FlyEduDownloader/FlyEduDownloader.png">
-                <span class="title">飞翔教学资源助手 FlyEduDownloader</span>
-            </fluent-button>
-			<fluent-button class="grid-item" onclick="window.open('./mcweb/index.html')">
-				<img src="./mcweb/mc.png">
-                <span class="title">Minecraft 网页版链接</span>
+			<fluent-button class="grid-item" onclick="window.open('https://github.com/cjhdevact/FlyEduDownloader/issues')">
+				<img src="../../Assets/icon/FeedBack.png">
+                <span class="title">问题反馈</span>
             </fluent-button>
         </div>
 		<br>
 		<center>
-		<fluent-button class="mbutton" onclick="window.open('./index.html','_self')">
-                <span class="title">新标签页打开</span>
+		<fluent-button class="mbutton" onclick="window.open('https://cjhdevact.github.io')">
+                <span class="title">返回本网站主页</span>
         </fluent-button>
 		</center>
 		<br>
