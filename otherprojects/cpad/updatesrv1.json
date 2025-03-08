@@ -1,14 +1,1 @@
-[
- {
-  "upname": "FlyEduDownloader",
-  "upid": "100001",
-  "up32": "https://gitee.com/cjhdevact/fedsrv/releases/download/4/fed32.exe",
-  "up32sha256": "39d5fb405d1d20c21d8b994d18729bba8098bff22401f7b0c37fc9f07ac642be",
-  "up32cml": "/verysilent /suppressmsgboxes /norestart",
-  "up64": "https://gitee.com/cjhdevact/fedsrv/releases/download/4/fed64.exe",
-  "up64sha256": "827cee353fea543f9f9fcbc3ca27e08db682d9ccb789d56887d3742b96032b8a",
-  "up64cml": "/verysilent /suppressmsgboxes /norestart",
-  "upmid": [
-  ]
- }
-]
+{"rurl": "https://gitee.com/cjhdevact/cpadsrv/raw/master/cpadupdatesrv1.json"}
